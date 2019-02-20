@@ -23,7 +23,7 @@ extension UIColor {
 class ViewController: UIViewController {
     
     // Variables
-    var listOfWords = ["sugar", "pie", "butter"]
+    var listOfWords = ["sugar", "butter", "flour", "apple", "cinnamon"]
     let incorrectMovesAllowed = 7
     var totalWins = 0 {
         // Start a new round after a win
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
         let letterArray = currentGame.formattedWord.map { String($0)}
         // Join all characters separated by a space into a string
         correctWordLabel.text = letterArray.joined(separator: " ")
-        scoreLabel.text = "Wins: \(totalWins), Losses: \(totalLosses)"
+        scoreLabel.text = "Wins: \(totalWins)\nLosses: \(totalLosses)"
         treeImageView.image = UIImage(named: "Tree \(currentGame.incorrectMovesRemaining)")
     }
     
