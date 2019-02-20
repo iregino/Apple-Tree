@@ -8,10 +8,22 @@
 
 import UIKit
 
+
+//This is an extention of UIColor to initialize the object with integer parameters, then cast them as CGFloat
+extension UIColor {
+    convenience init(red: Int, green: Int, blue: Int) {
+        let newRed = CGFloat(red)/255
+        let newGreen = CGFloat(green)/255
+        let newBlue = CGFloat(blue)/255
+        
+        self.init(red: newRed, green: newGreen, blue: newBlue, alpha: 1.0)
+    }
+}
+
 class ViewController: UIViewController {
     
     // Variables
-    var listOfWords = ["sugar", "pie", "cinnamon", "vanilla", "crust", "apple", "butter"]
+    var listOfWords = ["sugar", "pie", "butter"]
     let incorrectMovesAllowed = 7
     var totalWins = 0 {
         // Start a new round after a win
@@ -35,6 +47,10 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        // Shuffle the array
+        listOfWords.shuffle()
+        // Start a new round
         newRound()
     }
     
@@ -46,7 +62,18 @@ class ViewController: UIViewController {
             enableLetterButtons(true)
             updateUI()
         } else {
-            enableLetterButtons(false)
+            var title = ""
+            var msg = ""
+            if totalWins > totalLosses {
+                title = "Congratulations!"
+                msg = "You are a winnder."
+            } else {
+                title = "Game Over!"
+                msg = "Better luck next time."
+            }
+            showAlert(withTitle: title, andMessage: msg)
+            let appDelegate = AppDelegate()
+            appDelegate.resetApp()
         }
     }
     
@@ -54,6 +81,7 @@ class ViewController: UIViewController {
     func enableLetterButtons(_ enable: Bool) {
         for button in letterButtons {
             button.isEnabled = enable
+            button.backgroundColor = UIColor(red: 102, green: 185, blue: 2)
         }
     }
     
@@ -90,6 +118,18 @@ class ViewController: UIViewController {
         } else {
             updateUI()
         }
+    }
+    
+    // Show alert with specific error message
+    func showAlert(withTitle: String, andMessage: String) {
+        // Create an alert instance
+        let alert = UIAlertController(title: withTitle, message: andMessage, preferredStyle: .alert)
+        // Create an alert action
+        let cancelAction = UIAlertAction(title: "Play Again", style: .cancel, handler: nil)
+        // Add alert action to alert instance
+        alert.addAction(cancelAction)
+        // Present the alert to user
+        present(alert, animated: true)
     }
     
 }
