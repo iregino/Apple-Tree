@@ -12,6 +12,7 @@
 		F9EC172E221C952A005F0CC7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9EC172C221C952A005F0CC7 /* Main.storyboard */; };
 		F9EC1730221C952C005F0CC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F9EC172F221C952C005F0CC7 /* Assets.xcassets */; };
 		F9EC1733221C952C005F0CC7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F9EC1731221C952C005F0CC7 /* LaunchScreen.storyboard */; };
+		F9EC173B221CC9D1005F0CC7 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9EC173A221CC9D1005F0CC7 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		F9EC172F221C952C005F0CC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F9EC1732221C952C005F0CC7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F9EC1734221C952C005F0CC7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F9EC173A221CC9D1005F0CC7 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				F9EC172F221C952C005F0CC7 /* Assets.xcassets */,
 				F9EC1731221C952C005F0CC7 /* LaunchScreen.storyboard */,
 				F9EC1734221C952C005F0CC7 /* Info.plist */,
+				F9EC173A221CC9D1005F0CC7 /* Game.swift */,
 			);
 			path = "Apple Tree";
 			sourceTree = "<group>";
@@ -136,6 +139,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F9EC172B221C952A005F0CC7 /* ViewController.swift in Sources */,
+				F9EC173B221CC9D1005F0CC7 /* Game.swift in Sources */,
 				F9EC1729221C952A005F0CC7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,7 +296,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.student14.Apple-Tree";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -310,7 +314,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.student14.Apple-Tree";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
