@@ -55,13 +55,15 @@ class ViewController: UIViewController {
     }
     
     func newRound() {
-        // Disable buttons when there's no more word to guess
+        // Continue with the game if there are more words to guess
         if !listOfWords.isEmpty {
             let newWord = listOfWords.removeFirst()
             currentGame = Game(word: newWord, incorrectMovesRemaining: incorrectMovesAllowed, guessedLetters: [])
             enableLetterButtons(true)
             updateUI()
-        } else {
+        }
+        // Show alert message when there's no more word to guess
+        else {
             var title = ""
             var msg = ""
             if totalWins > totalLosses {
