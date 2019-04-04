@@ -12,4 +12,4 @@ Swift 4, Xcode 10
 
 ### Purpose
 
-This is a project in Apple's App Development with Swift. The goal of this exercise is to demonstrate the use of autolayout and constraints, 
+This is a project in Apple's App Development with Swift. The goal of this exercise is to demonstrate the use of autolayout and constraints.
